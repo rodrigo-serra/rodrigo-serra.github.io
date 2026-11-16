@@ -13,15 +13,15 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Each line is typed, then its action plays on the robot.
 const PROGRAM = [
   [['kw', 'import '], ['id', 'rclpy']],
-  [['kw', 'from '], ['id', 'socrob '], ['kw', 'import '], ['id', 'Bob']],
+  [['kw', 'from '], ['id', 'socrob '], ['kw', 'import '], ['id', 'Pro']],
   [],
-  [['id', 'bob '], ['op', '= '], ['fn', 'Bob'], ['op', '()']],
-  [['id', 'bob.'], ['fn', 'look_at'], ['op', '('], ['str', '"rodrigo"'], ['op', ')']],
-  [['id', 'bob.'], ['fn', 'wave'], ['op', '()']],
-  [['id', 'bob.'], ['fn', 'look_at'], ['op', '('], ['str', '"visitor"'], ['op', ')']],
-  [['id', 'bob.'], ['fn', 'say'], ['op', '('], ['str', '"Hi! Welcome."'], ['op', ')']],
-  [['id', 'bob.'], ['fn', 'lift_torso'], ['op', '('], ['num', '0.25'], ['op', ')']],
-  [['id', 'bob.'], ['fn', 'look_at'], ['op', '('], ['str', '"laptop"'], ['op', ')']],
+  [['id', 'pro '], ['op', '= '], ['fn', 'Pro'], ['op', '()']],
+  [['id', 'pro.'], ['fn', 'look_at'], ['op', '('], ['str', '"rodrigo"'], ['op', ')']],
+  [['id', 'pro.'], ['fn', 'wave'], ['op', '()']],
+  [['id', 'pro.'], ['fn', 'look_at'], ['op', '('], ['str', '"visitor"'], ['op', ')']],
+  [['id', 'pro.'], ['fn', 'say'], ['op', '('], ['str', '"Hi! Welcome."'], ['op', ')']],
+  [['id', 'pro.'], ['fn', 'lift_torso'], ['op', '('], ['num', '0.25'], ['op', ')']],
+  [['id', 'pro.'], ['fn', 'look_at'], ['op', '('], ['str', '"laptop"'], ['op', ')']],
   [['cm', '# tests passed ✓']],
 ];
 const ACTION = { 4: 'lookRodrigo', 5: 'wave', 6: 'lookVisitor', 7: 'say', 8: 'lift', 9: 'lookLaptop' };
@@ -50,7 +50,7 @@ function codePanel() {
     ctx.fillRect(8, 8, W - 16, 58);
     ['#ff6b6b', '#ffd166', '#5fd38a'].forEach((c, i) => { ctx.fillStyle = c; ctx.beginPath(); ctx.arc(46 + i * 34, 37, 10, 0, 7); ctx.fill(); });
     ctx.font = '500 26px ui-monospace, Menlo, Consolas, monospace'; ctx.fillStyle = '#a7a2b8';
-    ctx.fillText('hello_bob.py', 160, 46);
+    ctx.fillText('hello_pro.py', 160, 46);
     // code
     ctx.font = font;
     const lineH = 60, top = 128, left = 100;
