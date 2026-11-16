@@ -1,0 +1,17 @@
+{
+  "name": "rodrigoserra-world",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "photos": "bash scripts/photos.sh"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "vite": "^6.4.6"
+  }
+}

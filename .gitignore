@@ -1,0 +1,7 @@
+node_modules/
+dist/
+# Original, full-size photos. The site uses the small copies in public/photos (npm run photos).
+images/
+# The full CV is kept out of the public repository for now. Remove this line to publish it.
+cv.pdf
+.cache/

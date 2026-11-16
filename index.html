@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rodrigo Serra | Research Engineer, Robotics and Perception</title>
+  <meta name="description" content="Rodrigo Serra, research engineer and SocRob@Home team leader at the Institute for Systems and Robotics, Instituto Superior Técnico. Robot perception, service robotics and robotics competitions.">
+  <meta name="color-scheme" content="dark light">
+  <script>
+    // Pick the theme before the page paints: the saved choice, else dark.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark';
+    })();
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container bar">
+      <a class="brand" href="#home">Rodrigo<span>Serra</span></a>
+      <nav id="nav" aria-label="Sections"></nav>
+      <button id="menu" type="button" class="icon" aria-label="Menu" aria-expanded="false" aria-controls="nav">☰</button>
+      <button id="theme" type="button" class="icon" aria-label="Switch between light and dark theme">◐</button>
+    </div>
+  </header>
+
+  <main></main>
+
+  <footer>
+    <div class="container">
+      <span>© Rodrigo Serra</span>
+    </div>
+  </footer>
+
+  <noscript><p style="padding:2rem;font-family:system-ui">This page needs JavaScript to show its content.</p></noscript>
+  <script type="module" src="/src/home.js"></script>
+</body>
+</html>
