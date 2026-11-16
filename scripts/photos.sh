@@ -24,11 +24,8 @@ portrait "me/4.jpg"     hub/portrait
 # work
 add "durable/1.png"       work/durable-solar-1
 add "robots/bob_2.png"    work/bob-interview 1460x821+456+0   # cropped to 16:9 around the robot
-add "robocup/2023/2.jpg"                    work/robocup-2023-podium
-add "robocup/2024/2.png"                work/robocup-2024-team
 add "fnr/2026/3.jpg"                                    work/portugal-open-2026-team
 add "fnr/2026/2.jpg"                           work/portugal-open-2026-2
-add "eurobin/nancy/2.jpg"                     work/eurobin-nancy-2024-arena
 add "eurobin/brussels/1.jpg"            work/eurobin-brussels-2026-1
 add "eurobin/brussels/2.jpg"            work/eurobin-brussels-2026-2
 # personal

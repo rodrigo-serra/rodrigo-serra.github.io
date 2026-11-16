@@ -17,9 +17,12 @@ const doi = (d) => `https://doi.org/${d}`;
 
 // ---------------------------------------------------------------- content
 
+const CV_URL = `${BASE}cv.pdf`;
+const SOCROB_URL = 'https://socrob.github.io/';
+
 const HERO = {
   eyebrow: 'Research Engineer · Robotics and Perception',
-  lead: 'I build the perception and task skills that let service robots see, follow and help people at home.',
+  lead: 'I build the perception and task skills that let service robots help people at home.',
   sub: 'Research Engineer and SocRob@Home Team Leader at the Institute for Systems and Robotics (ISR), Instituto Superior Técnico, working across perception, software and system integration.',
   photo: { src: 'hub/portrait', alt: 'Rodrigo Serra' },
 };
@@ -28,88 +31,53 @@ const ABOUT = {
   title: 'Hands-on robotics, from the camera to the competition floor.',
   text: [
     'I studied Electrical and Computer Engineering at Instituto Superior Técnico, specialising in control and robotics, and started my career as a web developer. Since 2022 I have been a research engineer at the Institute for Systems and Robotics, where I became Head of Perception in 2023 and Team Leader of SocRob@Home in 2024.',
-    'My work combines engineering with international collaboration, student mentoring and science communication: I co-designed the euROBIN Coopetition framework, take our robots to RoboCup, and regularly show them to schools and the public.',
+    'My work combines engineering with international collaboration, student mentoring and science communication. I co-designed the euROBIN Coopetition framework, take our robots to RoboCup, and regularly show them to schools and the public.',
   ],
+  skills: ['Python', 'ROS 2', 'OpenCV', 'YOLO', 'SAM', 'RGB-D and 3D perception', 'Object detection and segmentation', 'Task state machines', 'Go', 'JavaScript and Nuxt', 'Linux', 'Team leadership'],
 };
 
-const EXPERIENCE = [
+// Work and studies, one line each. The details are in the CV.
+const BACKGROUND = [
   {
-    role: 'Research Engineer', when: 'Apr 2022 — Present',
+    when: 'Apr 2022 — Present', title: 'Research Engineer',
     org: 'Institute for Systems and Robotics (ISR) · Instituto Superior Técnico', url: 'https://isr.tecnico.ulisboa.pt/',
-    points: [
-      'Develop perception, person tracking and recognition, and task execution for service robots. Integrate navigation and multi-robot cooperation, and contribute to the ROS 1 to ROS 2 migration.',
-      'Head of Perception since 2023 and Team Leader since 2024: coordinate development, testing and competitions, and mentor bachelor’s and master’s students.',
-      'Co-designed the euROBIN Coopetition framework and built its Nuxt-based platform for sharing software and data.',
-      'Diagnose hardware, sensor, control and communication faults on TIAGo robots, and coordinate maintenance with PAL Robotics.',
-    ],
+    text: 'Perception and task execution for service robots. Head of Perception since 2023 and SocRob@Home Team Leader since 2024.',
   },
   {
-    role: 'Junior Software Developer', when: 'Oct 2021 — Apr 2022',
+    when: 'Oct 2021 — Apr 2022', title: 'Junior Software Developer',
     org: 'Magycal · Almada', url: 'https://magycal.com/',
-    points: [
-      'Developed the web backoffice and APIs of an over-the-top (OTT) media platform with Nuxt.js and Go.',
-      'Built and maintained client websites, including online stores, with WordPress, OpenCart, HTML, CSS and JavaScript.',
-    ],
+    text: 'Web backoffice and APIs for a media streaming platform, with Nuxt.js and Go.',
   },
-];
-
-const SKILLS = [
-  ['Perception', 'OpenCV, YOLO, SAM, RGB-D and 3D perception, object detection and segmentation, person tracking, re-identification, face recognition'],
-  ['Robotics', 'ROS 1 and ROS 2, task state machines with YASMIN, integration of perception and task execution, RGB-D cameras and LiDAR, coordinate frames, fault diagnosis'],
-  ['Software', 'Python, Go, JavaScript, C, MATLAB, SQL, Nuxt.js, HTML and CSS, Linux, Git, LaTeX, Roboflow'],
-  ['Leadership and communication', 'Team leadership, technical planning, student mentoring, international collaboration, science outreach, photography and video. Portuguese (native), English (C2)'],
+  {
+    when: '2014 — 2020', title: 'Integrated M.Sc. in Electrical and Computer Engineering',
+    org: 'Instituto Superior Técnico, Universidade de Lisboa', url: 'https://tecnico.ulisboa.pt/',
+    text: 'Systems, Decision and Control, and Robotics. Thesis on mosaicing with pan-tilt-zoom cameras.',
+    link: { label: 'Thesis', url: 'https://fenix.tecnico.ulisboa.pt/cursos/meec/dissertacao/1409728525633020' },
+  },
 ];
 
 const PROJECTS = [
   {
     kicker: 'Oct 2022 — Present', title: 'euROBIN', cover: 'work/eurobin-brussels-2026-1',
-    text: 'European network of excellence on AI-powered robotics, focused on making robotics methods transfer across robots and labs. I co-designed its Coopetition framework, tasks and scoring, built the Nuxt platform where teams share software and data, and coordinate integration with partner teams.',
+    text: 'European network of excellence on AI-powered robotics. I co-designed its Coopetition framework and built the platform where teams share software and data.',
     links: [['Project website', 'https://www.eurobin-project.eu/'], ['Paper', doi('10.1109/RAP.2026.3733849')]],
   },
   {
     kicker: 'Sep 2022 — Present', title: 'SocRob@Home', cover: 'work/portugal-open-2026-team',
-    text: 'ISR team developing robots that assist people at home, evaluated at RoboCup@Home. I develop perception and person following, reusable ROS 2 interfaces and task state machines on TIAGo robots, and lead integration, testing and competition preparation.',
-    links: [['Team website', 'https://irs-group.github.io/socrobwebsite/'], ['YouTube channel', 'https://www.youtube.com/@socrob_home']],
+    text: 'ISR’s team for robots that help people at home, with podium finishes at RoboCup@Home in 2023 and 2024. I lead the team and develop its perception.',
+    links: [['Team website and results', SOCROB_URL], ['YouTube channel', 'https://www.youtube.com/@socrob_home']],
   },
   {
-    kicker: '2025 · Case study', title: 'SocRob@Home–Oracle pilot', coverUrl: `${import.meta.env.BASE_URL}illustrations/oracle-pilot.svg`,
+    kicker: '2025 · Case study', title: 'SocRob@Home–Oracle pilot', coverUrl: `${BASE}illustrations/oracle-pilot.svg`,
     coverAlt: 'Diagram: a spoken instruction goes to a language model in the cloud, which sends a task plan to the robot',
-    text: 'Pilot evaluating cloud-hosted language models and LangGraph for robot task planning, alongside reinforcement learning for whole-body control with NVIDIA Isaac Lab. I contributed to the collaboration and co-authored the technical case study.',
+    text: 'Pilot on cloud-hosted language models for robot task planning. I contributed to the collaboration and co-authored the case study.',
     links: [['Oracle case study', 'https://blogs.oracle.com/ai-and-datascience/ai-driven-task-motion-planning-service-robots-with-oci']],
   },
   {
     kicker: 'Apr 2022 — Oct 2022', title: 'DURABLE', cover: 'work/durable-solar-1',
-    text: 'Multi-partner project using robots to operate and maintain wind and solar farms. I developed ground-robot navigation and cooperative behaviours, and contributed to research on a drone that follows and lands on a moving ground robot.',
+    text: 'Robots that operate and maintain wind and solar farms. I worked on ground-robot navigation and on a drone that lands on a moving robot.',
     links: [['Project website', 'https://www.durableproject.eu/'], ['Paper', doi('10.3390/s23020829')]],
   },
-];
-
-// [event, place, result, podium?]
-const EVENTS = [
-  ['2026', [
-    ['RoboCup@Home, Open Platform League', 'Incheon, South Korea', '10th of 26', false],
-    ['RoboCup@Home team poster', 'Incheon, South Korea', '2nd place', true],
-    ['RoboCup Portugal Open', 'Barcelos, Portugal', '3rd place', true],
-    ['euROBIN European Parliament demo', 'Brussels, Belgium', 'Demonstration', false],
-  ]],
-  ['2024', [
-    ['euROBIN Coopetition', 'Nancy, France', '3rd place', true],
-    ['RoboCup@Home, Open Platform League', 'Eindhoven, Netherlands', '3rd place', true],
-    ['RoboCup Portugal Open', 'Paredes de Coura, Portugal', '2nd place', true],
-    ['LARSyS pitch presentation', 'LARSyS annual meeting', 'Best pitch', true],
-    ['European Robotics Forum', 'Rimini, Italy', 'Presentation', false],
-  ]],
-  ['2023', [
-    ['RoboCup@Home, Open Platform League', 'Bordeaux, France', '2nd place · Best GPSR', true],
-    ['RoboCup Portugal Open', 'Tomar, Portugal', '2nd place', true],
-    ['euROBIN Hackathon', 'Seville, Spain', 'Joint demo', false],
-  ]],
-];
-
-const EVENT_PHOTOS = [
-  ['work/robocup-2023-podium', 'RoboCup 2023, Bordeaux'],
-  ['work/eurobin-nancy-2024-arena', 'euROBIN Coopetition 2024, Nancy'],
-  ['work/robocup-2024-team', 'RoboCup 2024, Eindhoven'],
 ];
 
 const VIDEOS = [
@@ -121,39 +89,13 @@ const VIDEOS = [
     text: 'On the present and future impact of robotics and AI, with our domestic robot.', url: 'https://www.youtube.com/watch?v=BaQrtOsDL7M' },
 ];
 
-const OUTREACH = 'I also enjoy explaining what we do: robot demonstrations for schools, European Researchers’ Night at Pavilhão do Conhecimento, JEEC and Técnico Day. I run the team’s Instagram and LinkedIn, and in 2024 we appeared in the SIC documentary “Existe, IA Pensa”.';
-
-const PUBLICATIONS = [
-  ['R. Serra, C. Azevedo, A. Silva, K. Alcedo, Q. Rouxel, P. So, A. Suarez, A. Albu-Schaeffer, P. U. Lima', 'Transferability Through Cooperative Competitions', 'IEEE Robotics and Automation Practice, 2026 (early access)', '10.1109/RAP.2026.3733849'],
-  ['P. U. Lima, C. Azevedo, R. Serra', 'Robot Contests as a Catalyst for Robotics Science', 'Annual Review of Control, Robotics, and Autonomous Systems, vol. 9, 2026', '10.1146/annurev-control-022624-012944'],
-  ['A. Suarez et al. (co-author: R. Serra)', 'Door-to-Door Parcel Delivery From Supply Point to User’s Home With Heterogeneous Robot Team: The euROBIN First-Year Robotics Hackathon', 'IEEE Robotics & Automation Magazine, vol. 32, no. 3, 2025', '10.1109/MRA.2024.3501954'],
-  ['R. Bettencourt, R. Serra, P. U. Lima, A. Vale', 'Comparison of Different LiDAR Sensors in SLAM: Criteria Formulation and Results', 'IEEE ICARSC, 2025', '10.1109/icarsc65809.2025.10970156'],
-  ['R. Bettencourt, C. Caramalho, G. Nunes, R. Serra, A. Vale, P. U. Lima', 'Indoor 2.5D Navigation for Ground Robots', 'IEEE ICARSC, 2025', '10.1109/ICARSC65809.2025.10970157'],
-  ['R. Bettencourt, J. Lewis, R. Serra, M. Basiri, A. Vale, P. U. Lima', 'GEERS: Georeferenced Enhanced EKF Using Point Cloud Registration and Segmentation', 'IEEE Robotics and Automation Letters, vol. 9, no. 2, 2024', '10.1109/lra.2024.3349828'],
-  ['J. Morales, I. Castelo, R. Serra, P. U. Lima, M. Basiri', 'Vision-Based Autonomous Following of a Moving Platform and Landing for an Unmanned Aerial Vehicle', 'Sensors, vol. 23, no. 2, 2023', '10.3390/s23020829'],
-];
-
-const EDUCATION = [
-  {
-    when: '2014 — 2020', title: 'Integrated M.Sc. in Electrical and Computer Engineering', org: 'Instituto Superior Técnico, Universidade de Lisboa',
-    text: 'Fields of study: Systems, Decision and Control, and Robotics. Thesis: Mosaicing with Pan-Tilt-Zoom Cameras.',
-    link: { label: 'Thesis', url: 'https://fenix.tecnico.ulisboa.pt/cursos/meec/dissertacao/1409728525633020' },
-  },
-  {
-    when: 'Sep 2023', title: 'EASE Fall School', org: 'University of Bremen, Germany',
-    text: 'Training in cognition-enabled robot manipulation (3 ECTS).',
-  },
-  {
-    when: 'Sep 2023 — Apr 2024', title: 'Elite Life Coach, Level 5 accredited training', org: 'Evolve Life Coaching College, London',
-    text: 'Accredited by the International Authority for Professional Coaching & Mentoring (IAPC&M).',
-  },
-];
+const OUTREACH = 'I also enjoy explaining what we do, from robot demonstrations for schools to the SIC documentary “Existe, IA Pensa”.';
 
 const BEYOND = [
   { kicker: '2017 — 2021', title: 'Middle-distance running', cover: 'personal/running-race',
-    text: 'Raced the 800 m and 1500 m at national championships. National university champion over 1500 m in 2018/19, and assistant coach for under-18 and under-20 athletes.' },
+    text: 'Raced the 800 m and 1500 m at national level. National university champion over 1500 m in 2018/19.' },
   { kicker: 'Ongoing', title: 'Handpan and percussion', cover: 'personal/handpan',
-    text: 'Percussionist and handpan player exploring Brazilian and Indian rhythms, with performances at community gatherings.' },
+    text: 'Percussionist and handpan player exploring Brazilian and Indian rhythms.' },
   { kicker: 'Aug 2023 · Olón, Ecuador', title: 'Volunteering', cover: 'personal/ecuador-2',
     text: 'Four weeks helping to build and maintain an eco-home.' },
 ];
@@ -206,31 +148,23 @@ main.append(
       el('p', { className: 'sub', textContent: HERO.sub }),
       el('p', { className: 'actions' },
         el('a', { className: 'btn primary', href: '#contact', textContent: 'Get in touch' }),
-        el('a', { className: 'btn', href: '#projects', textContent: 'See my work' }))),
+        el('a', { className: 'btn', href: '#projects', textContent: 'See my work' }),
+        ext('CV (PDF)', CV_URL, 'btn'))),
     el('div', { className: 'stage' }))),
 
-  section('about', 'About me', ABOUT.title, null, ...ABOUT.text.map((t) => el('p', { className: 'prose', textContent: t }))),
+  section('about', 'About me', ABOUT.title, null,
+    ...ABOUT.text.map((t) => el('p', { className: 'prose', textContent: t })),
+    el('ul', { className: 'tags', ariaLabel: 'Main skills' }, ABOUT.skills.map((k) => el('li', { textContent: k })))),
 
-  section('experience', 'Experience', 'Work and research history', null,
-    el('div', { className: 'stack' }, EXPERIENCE.map((x) => el('article', { className: 'panel' },
-      el('div', { className: 'role-head' }, el('h3', { textContent: x.role }), el('span', { className: 'muted', textContent: x.when })),
-      el('p', { className: 'org' }, ext(x.org, x.url)),
-      el('ul', {}, x.points.map((p) => el('li', { textContent: p }))))))),
+  section('background', 'Background', 'Work and studies', null,
+    el('div', { className: 'stack' }, BACKGROUND.map((x) => el('article', { className: 'panel edu' },
+      el('span', { className: 'muted', textContent: x.when }),
+      el('div', {}, el('h3', { textContent: x.title }), el('p', { className: 'org' }, ext(x.org, x.url)),
+        el('p', {}, x.text, x.link ? ' ' : null, x.link ? ext(x.link.label + ' ↗', x.link.url) : null))))),
+    el('p', { className: 'more' }, 'Publications, talks and training are in my CV. ', ext('Open the CV (PDF) ↗', CV_URL))),
 
-  section('skills', 'Skills', 'Tools for robots that work outside the lab.', null,
-    el('div', { className: 'grid two' }, SKILLS.map(([name, text]) => el('article', { className: 'panel' }, el('h3', { textContent: name }), el('p', { textContent: text }))))),
-
-  section('projects', 'Projects and research', 'Research projects with real robots.',
-    'Selected projects in domestic service robotics, European collaboration and field robotics.',
+  section('projects', 'Projects', 'Research projects with real robots.', null,
     el('div', { className: 'grid two' }, PROJECTS.map(card))),
-
-  section('competitions', 'Competitions and events', 'Where the work gets tested in public.', null,
-    el('div', { className: 'photos' }, EVENT_PHOTOS.map(([src, cap]) => el('figure', {}, el('img', { src: thumbUrl(src), alt: '', loading: 'lazy' }), el('figcaption', { textContent: cap })))),
-    EVENTS.map(([year, rows]) => el('div', { className: 'year' },
-      el('h3', { textContent: year }),
-      el('ul', { className: 'rows' }, rows.map(([name, place, result, podium]) => el('li', {},
-        el('span', {}, el('strong', { textContent: name }), el('span', { className: 'muted', textContent: place })),
-        el('span', { className: podium ? 'badge podium' : 'badge', textContent: result }))))))),
 
   section('media', 'Media and outreach', 'See the team in action.', OUTREACH,
     el('div', { className: 'grid three' }, VIDEOS.map(videoCard)),
@@ -238,28 +172,17 @@ main.append(
       ext('SocRob@Home on YouTube ↗', 'https://www.youtube.com/@socrob_home', 'btn'),
       ext('SIC documentary ↗', 'https://sicnoticias.pt/video/2024-04-04-Grande-Reportagem-SIC-Existe-IA-Pensa--Parte-II--365e8f51', 'btn'))),
 
-  section('publications', 'Publications', 'Journal and conference papers', null,
-    el('ol', { className: 'pubs' }, PUBLICATIONS.map(([authors, title, venue, d]) => el('li', {},
-      ext(title, doi(d), 'pub-title'), el('span', { className: 'pub-authors', textContent: authors }), el('span', { className: 'muted', textContent: venue }))))),
-
-  section('education', 'Education', 'Academic background and training', null,
-    el('div', { className: 'stack' }, EDUCATION.map((x) => el('article', { className: 'panel edu' },
-      el('span', { className: 'muted', textContent: x.when }),
-      el('div', {}, el('h3', { textContent: x.title }), el('p', { className: 'org', textContent: x.org }),
-        el('p', {}, x.text, x.link ? ' ' : null, x.link ? ext(x.link.label + ' ↗', x.link.url) : null)))))),
-
   section('beyond', 'Beyond work', 'Running and rhythm.', null,
     el('div', { className: 'grid three small' }, BEYOND.map(card))),
 
   section('contact', 'Contact', 'Let’s talk robots.',
     'Working on service robotics, robot perception or robotics competitions? I would be glad to hear from you.',
-    el('p', { className: 'actions' }, PROFILE.links.map((l, i) => ext(l.label, l.url, i ? 'btn' : 'btn primary')))),
+    el('p', { className: 'actions' }, PROFILE.links.map((l, i) => ext(l.label, l.url, i ? 'btn' : 'btn primary')), ext('CV (PDF)', CV_URL, 'btn'))),
 );
 
 // ---------------------------------------------------------------- top bar
 
-const SECTIONS = [['about', 'About'], ['experience', 'Experience'], ['skills', 'Skills'], ['projects', 'Projects'], ['competitions', 'Competitions'], ['media', 'Media'],
-  ['publications', 'Publications'], ['education', 'Education'], ['beyond', 'Beyond work'], ['contact', 'Contact']];
+const SECTIONS = [['about', 'About'], ['background', 'Background'], ['projects', 'Projects'], ['media', 'Media'], ['beyond', 'Beyond work'], ['contact', 'Contact']];
 const nav = document.querySelector('#nav');
 nav.append(...SECTIONS.map(([id, name]) => el('a', { href: `#${id}`, textContent: name })));
 const menuBtn = document.querySelector('#menu');
@@ -315,7 +238,7 @@ if (canWebGL() && !navigator.connection?.saveData) {
 // Sections and cards rise in as they scroll into view; siblings follow one after another.
 if (!reduced && 'IntersectionObserver' in window) {
   root.classList.add('anim');
-  const groups = ['.section .eyebrow, .section h2, .section .intro, .section .prose', '.stack > *', '.grid > *', '.photos > *', '.year', '.pubs li', '.section > .container > .actions'];
+  const groups = ['.section .eyebrow, .section h2, .section .intro, .section .prose', '.stack > *', '.grid > *', '.tags', '.more', '.section > .container > .actions'];
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }, { rootMargin: '0px 0px -8% 0px' });

@@ -48,8 +48,19 @@ settings, Pages > Source must be set to "GitHub Actions".
 
 ## Changing content
 
-Text, links, projects, competitions and publications are lists at the top of
+Text, links, background, projects and videos are lists at the top of
 `src/home.js`. Save the file and the dev server reloads the page.
+
+## CV
+
+The page links to `public/cv.pdf`. It is built from the separate CV project (LaTeX).
+After rebuilding the CV there, copy the PDF over:
+
+```bash
+cp ~/Documents/Personal/cv/cv-llt.pdf public/cv.pdf
+```
+
+Everything in that PDF becomes public, including the contact details in its header.
 
 ## Photos
 
